@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.views import View
-from django.views.generic import CreateView
+from django.views.generic import CreateView, ListView
 from accounts.forms import UserForm, UserLoginForm
 from django.contrib.auth import authenticate, login, logout
 from django.urls import reverse_lazy
@@ -86,5 +86,19 @@ class RegisterView(CreateView):
             )
         return super().form_valid(form)
 
-def home(request):
-    return render(request, 'accounts/home.html')
+
+class LogoutView(View):
+    
+    def get(self, request):
+        logout(request)
+        messages.success(
+            self.request,
+            'Logout Realizado'
+        )
+
+        return redirect('login_view')
+
+
+class SocialAccountListView(ListView):
+    model = User
+    template_name = 'base/social_accounts.html'

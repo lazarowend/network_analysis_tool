@@ -14,7 +14,10 @@
     </div>
   </section>
 
-{% include 'base/messages.html' %}
+  <div class="div">
+    {% include 'base/messages.html' %}
+
+  </div>
 
   <form class="max-w-sm mx-auto" method="POST" action="{% url 'login_view' %}">{% csrf_token %}
     <div class="mb-5">

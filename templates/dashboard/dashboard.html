@@ -15,7 +15,11 @@
 
 {% include 'base/aside.html' %}
 
+
 <div class="p-4 sm:ml-64">
+    <div class="div">
+        {% include 'base/messages.html' %}
+      </div>
 
     <div class="p-4 bg-white rounded-lg md:p-8 dark:bg-gray-800" id="stats" role="tabpanel" aria-labelledby="stats-tab">
         <dl
@@ -51,5 +55,4 @@
 
 </div>
 
-{% include 'base/messages.html' %}
 {% endblock %}
