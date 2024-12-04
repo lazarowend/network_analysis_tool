@@ -45,7 +45,7 @@ class LoginView(View):
                     request,
                     'Login realizado com sucesso!'
                 )
-                return redirect('/home/')
+                return redirect('/dashboard/')
             else:
                 messages.error(
                     request,
